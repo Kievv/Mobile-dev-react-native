@@ -1,43 +1,45 @@
-import { getTasks, addTasks, removeTask, updateTasks } from "./tasks.js"
+import { getTasks, addTasks, removeTask, updateTasks } from "./tasks.js";
 
 const listaTarefas = () => {
-    let taskList = getTasks();
-    taskList.forEach(x => {
-        console.log(`Id da tarefa: ${x.id} \nNome da tarefa: ${x.name} \nEstado da tarefa: ${x.completed == true ? "Completada" : "Não completada"}`)
-    })
-}
+  let taskList = getTasks();
+  taskList.forEach((x) => {
+    console.log(
+      `Id da tarefa: ${x.id} \nNome da tarefa: ${x.name} \nEstado da tarefa: ${
+        x.completed == true ? "Completada" : "Não completada"
+      }`
+    );
+  });
+};
 
 const addTarefa = (task) => {
-    addTasks(task)
-}
+  addTasks(task);
+};
 
 const removerTarefa = (idTarefa) => {
-    removeTask(idTarefa)
-}
+  removeTask(idTarefa);
+};
 
 const atualizarTarefa = (id, objTarefa) => {
-    updateTasks(id, objTarefa);
-}
+  updateTasks(id, objTarefa);
+};
 
+listaTarefas();
+addTarefa("Formatar o PC");
 
-listaTarefas()
-addTarefa("Formatar o PC")
+console.log("============================================================");
 
-console.log("============================================================")
+removerTarefa(0);
 
-removerTarefa(0)
-
-console.log("============================================================")
+console.log("============================================================");
 
 listaTarefas();
 
-console.log("============================================================")
+console.log("============================================================");
 
-atualizarTarefa(2, {completed: true})
+atualizarTarefa(2, { completed: true });
 
-console.log("============================================================")
+console.log("============================================================");
 
-console.log("============================================================")
+console.log("============================================================");
 
-
-listaTarefas()
+listaTarefas();
